@@ -1,0 +1,220 @@
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+
+.canvas {
+    margin: 40px auto 0 auto;
+    overflow: hidden;
+    
+    .line {
+        position: absolute;
+        margin-top: 320px;
+        width: 180px;
+        height: 7px;
+        border-radius: 200% 15px 15px 200%;
+        background-color: lighten($base_steel_dark, 1%);
+        animation: tattoo-line-movement 3s ease-in infinite;
+        
+
+    }
+    
+    .circle-wrapper {
+        position: relative;
+        background: linear-gradient(darken($base_red_2, 2%), darken($base_red_2, 15%));
+        width:380px;
+        height:380px;
+        margin: 10px auto 0 auto;
+        overflow: hidden;
+        z-index: 0;
+        border-radius:50%;
+        padding: 0 50px 0 50px;
+        border: 14px solid lighten($base_steel, 10%);
+        
+    }
+    
+    .tattoo-machine-wrapper {
+        height: 300px;
+        width: 300px;
+        padding: 50px 50px 30px 50px;
+        margin: 0 auto 0 auto;
+        animation: tatooing 3s ease-in-out infinite, tatooing-rotate 3s ease-in-out infinite;
+
+        .upper_bar {
+            position: absolute;
+            width: 120px;
+            height: 20px;
+            margin-top: 15px;
+            background-color: $base_steel_dark;
+            border-radius: 5px;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0; 
+                height: 0;
+                border-radius: 15px;
+                margin-left: 40px;
+                margin-top: -15px;
+                transform: rotate(45deg);
+
+                border-top: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-left: 20px solid $base_steel_dark;
+            }
+        }
+        
+       .coil {
+           
+           width: 40px;
+           height: 50px;
+           position: absolute;
+           margin-left: 10px;
+           margin-top: 40px;
+           background-color: $base_red_1;
+           border-radius: 10px;
+           background: linear-gradient($base_red_1, darken($base_red_1, 10%));
+
+           &:nth-child(2) {
+               position: absolute;
+               margin-left: 55px;
+           }
+
+           &:before {
+            content: "";
+            margin-top:-30px;
+            left:10px;
+            width: 20px;
+            height: 100px;
+            background-color: $base_steel_light;
+            position: absolute;
+            z-index: -1;
+           }
+           
+       }
+
+       .lower_bar {
+        position: absolute;
+        width: 150px;
+        height: 20px;
+        margin-top: 95px;
+        background-color: $base_steel_dark;
+        border-radius: 5px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 15px; 
+            height: 20px;
+            margin-left: 90px;
+            background-color: $base_steel_dark;
+            border-radius: 5px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 30px; 
+            height: 5px;
+            margin-top:8px;
+            margin-left: 70px;
+            background-color: $base_steel_light;
+            border-radius: 5px;
+            z-index: -1;
+        }
+    }
+    
+    .needle_wrapper {
+        height: 220px;
+        width: 50px;
+        margin-left: 90px;
+
+        .needle {
+            position: absolute;
+            height: 220px;
+            width: 5px;
+            margin-left: 25px;
+            background-color: $base_steel_light;
+            z-index: -10;
+        }
+
+        .steel_grip {
+            position: absolute;
+            height: 140px;
+            width: 20px;
+            margin-top: 80px;
+            margin-left: 18px;
+            background-color: $base_steel_light;
+            border-radius: 5px;
+            z-index: -10;
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0; 
+                height: 0;
+                margin-left: -20px;
+                margin-top: 140px;
+                transform: rotate(90deg);
+
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 40x solid transparent;
+                border-left: 40px solid $base_steel_light;
+            }
+        }
+
+        .grip {
+            position: absolute;
+            margin-left: 8px;
+            margin-top: 130px;
+            height: 80px;
+            width: 40px;
+            border-radius: 15px; 
+            background-color: $base_steel_dark       
+        }
+    }
+        
+    }
+}
+
+
+@keyframes tatooing {
+	0% {
+         margin-top:5px;
+	}
+    50% {
+		 margin-top:30px;
+	}
+    
+    100% {
+		 margin-top:5px;
+	}
+}
+
+@keyframes tatooing-rotate {
+	0% {
+         transform:rotate(0deg); 
+	}
+    50% {
+         transform:rotate(-10deg); 
+	}
+    75% {
+        transform:rotate(1deg); 
+	}
+    100% {
+        transform:rotate(0deg); 
+	}
+}
+
+    @keyframes tattoo-line-movement {
+	  0% { 
+          margin-left: 110%;
+      }
+	  100% { 
+           margin-left: -120%; 
+      }
+	}	
+

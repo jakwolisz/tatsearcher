@@ -1,0 +1,184 @@
+    $input-color: #969aa1;
+    $input-border: #950741;
+    $input-border-blue: blue;
+
+
+    $input-background: #fff;
+    $input-placeholder: #CBD1DC;
+
+
+    $input-border-focus: #6F2232;
+    $input-border-blue-focus: #240090;
+    
+
+    $group-color: #FFF;
+    $group-border: $input-border;
+    $group-border-blue: $input-border-blue;
+
+
+    $group-background: #950741;
+    $group-background-blue: blue;
+
+    $group-color-focus: #fff;
+    $group-border-focus: $input-border-focus;
+    $group-border-blue-focus: $input-border-blue-focus;
+
+
+    $group-background-focus: #6F2232;
+    $group-background-blue-focus: #240090;
+
+.form-field-red {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: $input-color;
+    border: 1px solid $input-border;
+    background: $input-background;
+    transition: border .3s ease;
+    &::placeholder {
+        color: $input-placeholder;
+    }
+    &:focus {
+        outline: none;
+        border-color: $input-border-focus;
+    }
+}
+
+.form-field-blue {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: $input-color;
+    border: 1px solid $input-border-blue;
+    background: $input-background;
+    transition: border .3s ease;
+    &::placeholder {
+        color: $input-placeholder;
+    }
+    &:focus {
+        outline: none;
+        border-color: $input-border-blue-focus;
+    }
+}
+
+
+.options-group {
+    display: flex;
+    padding: 10px;
+}
+
+.form-group-red {
+    position: relative;
+    display: flex;
+    width: 50%;
+    &:first-child {
+        margin-right: 20px;
+    }
+
+    & > span,
+    .form-field-red {
+        white-space: nowrap;
+        display: block;
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        &:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+        &:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+    .form-field-red {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        width: 1%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    & > span {
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 25px;
+        color: $group-color;
+        background: $group-background;
+        border: 1px solid $group-border;
+        transition: background .3s ease, border .3s ease, color .3s ease;
+    }
+    &:focus-within {
+        & > span {
+            color: $group-color-focus;
+            background: $group-background-focus;
+            border-color: $group-border-focus;
+        }
+    }
+}
+
+.form-group-blue {
+    position: relative;
+    display: flex;
+    width: 50%;
+    &:first-child {
+        margin-right: 20px;
+    }
+
+    & > span,
+    .form-field-blue {
+        white-space: nowrap;
+        display: block;
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+        &:first-child {
+            border-radius: 6px 0 0 6px;
+        }
+        &:last-child {
+            border-radius: 0 6px 6px 0;
+        }
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+    .form-field-blue {
+        position: relative;
+        z-index: 1;
+        flex: 1 1 auto;
+        width: 1%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    & > span {
+        text-align: center;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 25px;
+        color: $group-color;
+        background: $group-background-blue;
+        border: 1px solid $group-border-blue;
+        transition: background .3s ease, border .3s ease, color .3s ease;
+    }
+    &:focus-within {
+        & > span {
+            color: $group-color-focus;
+            background: $group-background-blue-focus;
+            border-color: $group-border-blue-focus;
+        }
+    }
+}
